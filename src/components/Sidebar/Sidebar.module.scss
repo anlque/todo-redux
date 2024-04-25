@@ -1,0 +1,38 @@
+@import '../../variables';
+
+.Sidebar {
+  padding: 40px;
+  width: 18%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #282c34;
+  font-family: sans-serif;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.tab {
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #f8f7f7;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  color: #282c34;
+
+  &:hover {
+    background: #e8e8e8;
+  }
+}
+
+.selected {
+  background: #efefef;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .Sidebar {
+    padding: 20px 10px 10px;
+  }
+}

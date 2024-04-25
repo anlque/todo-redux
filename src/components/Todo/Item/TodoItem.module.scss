@@ -1,0 +1,98 @@
+.TodoItem {
+  display: grid;
+  justify-items: end;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 14px;
+  background-color: #f8f7f7;
+  border-radius: 8px;
+  gap: 16px;
+  align-items: center;
+  color: #282c34;
+  font-family: sans-serif;
+  font-size: 14px;
+  transition: all 0.3s;
+
+  &:hover {
+    background: #efefef;
+  }
+
+  span {
+    flex-grow: 1;
+    justify-self: start;
+  }
+
+  input[type="checkbox"] {
+    margin: 0;
+    appearance: none;
+    background-color: rgba(255, 255, 255, 0.88);
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      border: 1px solid #c7c6c6;
+      background-color: rgba(255, 255, 255, 0.44);
+    }
+
+    &:after {
+      content: "✓";
+      color: #4d9860;
+      position: absolute;
+      display: none;
+      transform: translate(-50%, -50%);
+      font-size: 16px;
+    }
+
+    &:checked {
+      &:after {
+        display: block;
+      }
+    }
+  }
+}
+
+.done,.todo,.deleted {
+  border-radius: 8px;
+  padding: 3px 10px;
+  text-transform: capitalize;
+}
+
+.done {
+  background-color: #f7faf8;
+  border: 1px solid #4d9860;
+}
+
+.todo {
+  background-color: rgba(252, 249, 248, 0.88);
+  border: 1px solid #f58746;
+}
+
+.deleted {
+  background-color: rgba(252, 249, 248, 0.88);
+  border: 1px solid #888888;
+}
+
+.actions {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.trashIcon {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid lightgrey;
+  border-radius: 8px;
+  padding: 4px;
+  background-color: rgba(255, 255, 255, 0.88);
+  transition: all 0.3s;
+
+  &:hover {
+    border: 1px solid #c7c6c6;
+    background-color: rgba(255, 255, 255, 0.44);
+  }
+}
